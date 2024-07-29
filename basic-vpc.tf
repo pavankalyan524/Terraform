@@ -22,15 +22,14 @@ resource "aws_subnet" "demo"{
 }
 
 
-
 data "aws_ami" "demo"{
 
     most_recent = true
-    owners = ["309956199498"]
+    owners = ["amazon"]
 
     filter {
         name  = "name"
-        values = ["RHEL-*-HVM-GA-*-x86_64-gp2"]
+        values = ["amzn2-ami-hvm-*-x86_64-gp2"]
     }
 }
 
