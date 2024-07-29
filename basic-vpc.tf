@@ -26,7 +26,7 @@ resource "aws_subnet" "demo"{
 data "aws_ami" "demo"{
 
     most_recent = true
-    owners = = ["309956199498"]
+    owners = ["309956199498"]
 
     filters {
         Name  = "name"
@@ -58,7 +58,7 @@ resource "aws_security_group" "demo" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_blocks = [0.0.0.0/0]
+        cidr_blocks = ["0.0.0.0/0"]
     } 
 }
 resource "aws_instance" "demo"{
