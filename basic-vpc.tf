@@ -29,7 +29,7 @@ data "aws_ami" "demo"{
     owners = ["309956199498"]
 
     filter {
-        Name  = "name"
+        name  = "name"
         values = ["RHEL-*-HVM-GA-*-x86_64-gp2"]
     }
 }
