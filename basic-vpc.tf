@@ -77,7 +77,7 @@ resource "aws_instance" "demo"{
     }
 
     ebs_block_device {
-      device_name = "/dev/sda"
+      device_name = "/dev/xvda"
       volume_size = 8
       volume_type = "io1"
       delete_on_termination = true
