@@ -3,9 +3,14 @@ provider "aws" {
 }
 
 resource "aws_vpc" "demo" {
-  cidr_block
-<<<<<<< HEAD
-=======
+  cidr_block = "10.100.0.0/16"
+  instance_tenancy = "dedicated"
+
+  tags = {
+    Name = "HYD VPC"
+  }
+}
+
 resource "aws_subnet" "demo"{
     cidr_block = "10.100.1.0/24"
     vpc_id = aws_vpc.demo.id
@@ -14,6 +19,5 @@ resource "aws_subnet" "demo"{
     tags = {
         name = "HYD SUBNET"
     }
->>>>>>> 31b07a8783c7c21347022e587532b939fc4e236d
 }
 
