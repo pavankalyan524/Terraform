@@ -7,9 +7,9 @@ resource "aws_vpc" "demo" {
   instance_tenancy = "dedicated"
 }
 
-resource "aws_subnet" "demo"{
-    cidr_block = "10.100.1.0/24"
-    vpc_id = aws_vpc.demo.id
-    availability_zone = "ap-south-2a"
+resource "aws_subnet" "demo" {
+  cidr_block        = "10.100.1.0/24"
+  vpc_id            = aws_vpc.demo.id
+  availability_zone = "ap-south-2a"
 }
 
