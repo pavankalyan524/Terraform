@@ -28,7 +28,7 @@ data "aws_ami" "demo"{
     most_recent = true
     owners = ["309956199498"]
 
-    filters {
+    filter {
         Name  = "name"
         values = ["RHEL-*-HVM-GA-*-x86_64-gp2"]
     }
