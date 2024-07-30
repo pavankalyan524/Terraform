@@ -79,7 +79,7 @@ resource "aws_instance" "demo"{
 }
 
 resource "aws_route_table" "demo"{
-        vpc_id = aws_vpc.demo.vpc_id
+        vpc_id = aws_vpc.demo.id
 
         tags = {
             name = "Public hyd route table"
