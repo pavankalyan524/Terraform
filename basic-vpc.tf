@@ -60,6 +60,7 @@ resource "aws_security_group" "demo" {
         cidr_blocks = ["0.0.0.0/0"]
     } 
 }
+
 resource "aws_instance" "demo"{
     ami = data.aws_ami.demo.id
     key_name = aws_key_pair.demo.key_name
@@ -75,41 +76,34 @@ resource "aws_instance" "demo"{
       delete_on_termination = true
 
     }
+}
 
-    /*ebs_block_device {
-      device_name = "/dev/xvda"
-      volume_size = 8
-      volume_type = "io1"
-      delete_on_termination = true
-    }*/
-
-    resource "aws_route_table" "demo"{
+resource "aws_route_table" "demo"{
         vpc_id = aws_vpc.demo.vpc_id
 
         tags = {
             name = "Public hyd route table"
         }
-    }
+}
 
-    resource "aws_route" "demo"{
+
+resource "aws_route" "demo"{
         route_table_id = aws_route_table.demo.id
         destination_cidr_block  = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.demo.id
-    }
+}
 
-    resource "aws_route_table_association" "demo"{
+resource "aws_route_table_association" "demo"{
         subnet_id = aws_subnet.demo.id
         route_table_id = aws_route_table.demo.id
 
-    }
+}
 
-    resource "aws_internet_gateway" "demo"{
+resource "aws_internet_gateway" "demo"{
         vpc_id = aws_vpc.demo.id
 
         tags = {
             name ="Demo Internet gateway"
         }
-    }
-  
-
 }
+  
