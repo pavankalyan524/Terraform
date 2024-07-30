@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_vpc" "demo" {
   cidr_block = "10.100.0.0/16"
-  instance_tenancy = "dedicated"
+  instance_tenancy = "default"
 
   tags = {
     Name = "HYD VPC"
@@ -64,7 +64,7 @@ resource "aws_security_group" "demo" {
 resource "aws_instance" "demo"{
     ami = data.aws_ami.demo.id
     key_name = aws_key_pair.demo.key_name
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     subnet_id = aws_subnet.demo.id
     availability_zone = "ap-south-2a"
     associate_public_ip_address = true
