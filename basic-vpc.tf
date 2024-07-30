@@ -107,3 +107,26 @@ resource "aws_internet_gateway" "demo"{
         }
 }
   
+
+resource "aws_vpn_gateway" "demo" {
+
+    vpc_id = aws_vpc.demo.id
+
+    tags = {
+        name = "HYD VPG GATEWAY........"
+    }
+  
+}
+
+resource "aws_customer_gateway" "demo" {
+
+    bgp_asn = 65317
+    ip_address = "13.201.61.204"
+    type = "ipsec.1"
+
+    tags = {
+
+        name = "StrongSwan Gateway..."
+    }
+}
+
