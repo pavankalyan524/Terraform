@@ -36,7 +36,7 @@ resource "aws_subnet" "one" {
 
 resource "aws_subnet" "two" {
 
-    idr_block = "10.250.1.0/24"
+    cidr_block = "10.250.1.0/24"
     availability_zone = "ap-south-2b"
     vpc_id = aws_vpc.demo.id
     map_public_ip_on_launch = true
