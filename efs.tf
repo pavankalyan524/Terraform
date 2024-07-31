@@ -23,7 +23,7 @@ resource "aws_vpc" "demo" {
 
     cidr_block = "10.300.0.0/16"
 
-    instance_tenancy = default
+    instance_tenancy = "default"
 }
 
 resource "aws_subnet" "one" {
