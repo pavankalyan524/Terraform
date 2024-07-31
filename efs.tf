@@ -52,7 +52,7 @@ resource "aws_security_group" "demo" {
         from_port = "2049"
         to_port = "2049"
         protocol = "tcp"
-        cidr_block =[ ["0.0.0.0/0"]
+        cidr_block = ["0.0.0.0/0"]
     }
 
     egress = {
@@ -70,5 +70,5 @@ resource "aws_efs_mount_target" "demo" {
     file_system_id = aws_efs_file_system.demo.id
     subnet_id = aws_subnet.one.id
     security_groups = [aws_security_group.demo.id]
-    
+
 }
