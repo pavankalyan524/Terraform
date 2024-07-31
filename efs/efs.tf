@@ -52,7 +52,7 @@ resource "aws_security_group" "demo" {
         from_port = "2049"
         to_port = "2049"
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     egress {
@@ -60,7 +60,7 @@ resource "aws_security_group" "demo" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
 
     }
 }
