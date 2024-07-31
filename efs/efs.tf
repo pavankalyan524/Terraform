@@ -21,14 +21,14 @@ resource "aws_efs_file_system" "demo" {
 
 resource "aws_vpc" "demo" {
 
-    cidr_block = "10.300.0.0/16"
+    cidr_block = "10.250.0.0/16"
 
     instance_tenancy = "default"
 }
 
 resource "aws_subnet" "one" {
 
-    cidr_block = "10.300.1.0/24"
+    cidr_block = "10.250.1.0/24"
     availability_zone = "ap-south-2a"
     vpc_id = aws_vpc.demo.id
     map_public_ip_on_launch = true
@@ -36,7 +36,7 @@ resource "aws_subnet" "one" {
 
 resource "aws_subnet" "two" {
 
-    idr_block = "10.300.1.0/24"
+    idr_block = "10.250.1.0/24"
     availability_zone = "ap-south-2b"
     vpc_id = aws_vpc.demo.id
     map_public_ip_on_launch = true
