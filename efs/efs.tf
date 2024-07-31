@@ -47,7 +47,7 @@ resource "aws_security_group" "demo" {
     vpc_id = aws_vpc.demo.id
     name = "SG-GROUP"
 
-    ingress = {
+    ingress {
 
         from_port = "2049"
         to_port = "2049"
@@ -55,7 +55,7 @@ resource "aws_security_group" "demo" {
         cidr_block = ["0.0.0.0/0"]
     }
 
-    egress = {
+    egress {
 
         from_port = 0
         to_port = 0
