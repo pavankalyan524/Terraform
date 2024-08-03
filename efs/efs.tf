@@ -1,7 +1,15 @@
-provider "aws" {
-  region = "ap-south-2"
-}
+terraform {
+    required_version = ">=1.9.3"
 
+    required_providers {
+      aws = {
+
+        source = "hashicorp/aws"
+        version = ">=3.0.0"
+        region = "ap-south-2"
+      }
+    }
+}
 
 resource "aws_vpc" "demo" {
 
