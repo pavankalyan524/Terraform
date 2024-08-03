@@ -6,10 +6,16 @@ terraform {
 
         source = "hashicorp/aws"
         version = ">=3.0.0"
-        region = "ap-south-2"
       }
     }
 }
+
+
+
+provider "aws" {
+  region = "ap-south-2"
+}
+
 
 resource "aws_vpc" "demo" {
 
