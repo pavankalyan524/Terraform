@@ -10,8 +10,6 @@ terraform {
     }
 }
 
-
-
 provider "aws" {
   region = "ap-south-2"
 }
@@ -51,9 +49,9 @@ resource "aws_efs_file_system" "demo" {
     }  
 }
 
-resource "aws-security_group" "for-instance"{
+resource "aws_security_group" "for-instance"{
     name = "DEMO2"
-    description = "2nd Demo "
+    description = "2nd Demo"
     vpc_id = aws_vpc.demo.id 
 
     ingress  {
