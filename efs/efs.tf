@@ -1,6 +1,7 @@
-provider "aws"{
-    region = "ap-south-2"
+provider "aws" {
+  region = "ap-south-2"
 }
+
 
 resource "aws_vpc" "demo" {
 
