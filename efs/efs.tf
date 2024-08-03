@@ -140,14 +140,6 @@ resource "aws_route_table_association" "demo" {
     route_table_id = aws_route_table.demo.id
 }
 
-resource "aws_key_pair" "demo" {
-
-    key_name = "DEMO KEY"
-
-    public_key = file("~/.ssh/id_rsa.pub")
-  
-}
-
 data "aws_ami" "name" {
 
     most_recent = true
