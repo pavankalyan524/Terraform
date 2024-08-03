@@ -157,7 +157,7 @@ resource "aws_instance" "demo" {
 
     ami = data.aws_ami.name.id
     instance_type = "t3.micro"
-    key_name = aws_key_pair.demo.id
+    key_name = demo-key
     subnet_id = aws_subnet.one.id
     security_groups = [aws_security_group.for-instance.id]
     availability_zone = "ap-south-2a"
