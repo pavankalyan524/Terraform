@@ -70,7 +70,6 @@ resource "aws_datasync_task" "name" {
     destination_location_arn = aws_datasync_location_s3.name.arn
 
     cloudwatch_log_group_arn = "arn:aws:ap-south-2:cloudwatch:loggroup"
-
     options {
       
       overwrite_mode = "ALWAYS"
@@ -84,8 +83,7 @@ resource "aws_datasync_task" "name" {
       preserve_devices = "PRESERVE"
       bytes_per_second = -1
 
-    }
-  
+    } 
 }
 
 
