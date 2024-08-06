@@ -19,15 +19,16 @@ provider "aws" {
 resource "aws_s3_bucket" "name" {
 
   bucket = "gvp-venkata-524"
+  acl = "private"
 
 }
 
-resource "aws_s3_bucket_acl" "name" {
+/*resource "aws_s3_bucket_acl" "name" {
 
   acl = "private"
   bucket = aws_s3_bucket.name.id
   
-}
+}*/
 
 resource "aws_s3_bucket_public_access_block" "name" {
 
