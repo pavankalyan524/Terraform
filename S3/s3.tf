@@ -18,7 +18,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "name" {
 
-  bucket = "GVP-524"
+  bucket = "gvp-venkata-524"
 
 }
 
