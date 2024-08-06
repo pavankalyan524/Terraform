@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "name" {
 
 resource "aws_s3_bucket_acl" "name" {
 
-  acl = private
+  acl = "private"
   bucket = aws_s3_bucket.name.id
   
 }
@@ -42,7 +42,7 @@ resource "aws_s3_bucket_versioning" "name" {
   bucket = aws_s3_bucket.name.id
 
   versioning_configuration {
-    status = enabled
+    status = "enabled"
   }
   
 }
