@@ -11,6 +11,8 @@ terraform {
 provider "aws" {
 
   region = "ap-south-2"
+  access_key = var.access_key
+  secret_key = var.secret_access_key
 
 }
 
@@ -59,3 +61,18 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "name" {
   }
   
 }
+
+variable "access_key" {
+
+  type = string
+  sensitive = true
+  
+}
+
+variable "secret_access_key" {
+
+  sensitive = true
+  type = string
+  
+}
+
