@@ -77,3 +77,23 @@ variable "secret_access_key" {
 }
 
 */
+
+resource "aws_s3_bucket_lifecycle_configuration" "name" {
+
+  bucket = aws_s3_bucket.name.id
+
+  rule {
+    id = "Starndard to Standard IA"
+    status = "Enabled"
+
+    transition {
+      days = 30
+      storage_class = "STANDARD-IA"
+    }
+
+    transition {
+      days = 60
+      storage_class = "GLACIER"
+    }
+  }
+}
