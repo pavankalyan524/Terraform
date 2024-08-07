@@ -88,7 +88,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "name" {
 
     transition {
       days = 30
-      storage_class = "STANDARD-IA"
+      storage_class = "STANDARD_IA"
     }
 
     transition {
