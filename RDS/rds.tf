@@ -121,8 +121,8 @@ resource "aws_db_instance" "name" {
     multi_az = true
     max_allocated_storage = "1000"
 
-    performance_insights_enabled = true
-    performance_insights_retention_period = 7
+    #performance_insights_enabled = true
+    #performance_insights_retention_period = 7
     
     parameter_group_name = aws_db_parameter_group.name.id
     db_subnet_group_name = aws_db_subnet_group.name.id
