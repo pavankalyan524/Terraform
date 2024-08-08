@@ -90,10 +90,10 @@ resource "aws_db_parameter_group" "name" {
       value = "2"
     }
 
-    parameter {
+    /*parameter {
       name = "performance_schema"
       value = "1"
-    }
+    }*/
 }
 
 
