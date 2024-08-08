@@ -102,7 +102,7 @@ resource "aws_db_instance" "name" {
 
     engine = "mysql"
     engine_version = "8.0"
-    identifier = "DEMO"
+    identifier = "automated"
     username = "admin"
     password = "admin@524"
     storage_type = "gp2"
@@ -112,10 +112,10 @@ resource "aws_db_instance" "name" {
     publicly_accessible = false
     
     backup_retention_period = 7
-    backup_window = "03:00 - 04:00"
-    maintenance_window = "SUN:03:00 - SUN:04:00"
+    backup_window = "03:00-04:00"
+    maintenance_window = "sun:03:00-sun:04:00"
 
-    final_snapshot_identifier = "FINAL SNAPSHOT"
+    final_snapshot_identifier = "final-snapshot"
     skip_final_snapshot = false
     deletion_protection = true
     multi_az = true
