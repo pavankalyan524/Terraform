@@ -27,7 +27,7 @@ resource "aws_vpc" "name" {
 resource "aws_subnet" "One" {
 
     vpc_id = aws_vpc.name.id
-    cidr_block = "10.1.0.0/24"
+    cidr_block = "10.0.1.0/24"
     availability_zone = "ap-south-2a"
 
   
@@ -36,7 +36,7 @@ resource "aws_subnet" "One" {
 resource "aws_subnet" "Two" {
 
     vpc_id = aws_vpc.name.id
-    cidr_block = "10.2.0.0/24"
+    cidr_block = "10.0.2.0/24"
     availability_zone = "ap-south-2b"
 
 }
@@ -73,7 +73,7 @@ resource "aws_security_group" "name" {
 resource "aws_db_parameter_group" "name" {
 
     name = "parametergroupofsql"
-    family = "mysql 8.0"
+    family = "mysql8.0"
     
     parameter {
       name = "max_connections"
