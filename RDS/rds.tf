@@ -104,7 +104,7 @@ resource "aws_db_instance" "name" {
     engine_version = "8.0"
     identifier = "automated"
     username = "admin"
-    password = "admin@524"
+    password = "admin524"
     storage_type = "gp2"
     storage_encrypted = true
     allocated_storage = "100"
