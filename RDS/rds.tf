@@ -127,7 +127,7 @@ resource "aws_db_instance" "name" {
     parameter_group_name = aws_db_parameter_group.name.id
     db_subnet_group_name = aws_db_subnet_group.name.id
     vpc_security_group_ids = [aws_security_group.name.id]
-    monitoring_interval = 60
+    #monitoring_interval = 60
     
   
 }
