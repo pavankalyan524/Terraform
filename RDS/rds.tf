@@ -72,7 +72,7 @@ resource "aws_security_group" "name" {
 
 resource "aws_db_parameter_group" "name" {
 
-    name = "ParametergroupforDemoRDS"
+    name = "parametergroupofsql"
     family = "mysql 8.0"
     
     parameter {
