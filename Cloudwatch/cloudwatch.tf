@@ -15,7 +15,7 @@ provider "aws" {
 
 resource "aws_sns_topic" "name" {
 
-    name = "Demo topic"
+    name = "Demo"
   
 }
 
