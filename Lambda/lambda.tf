@@ -18,7 +18,7 @@ resource "aws_lambda_function" "name" {
     function_name = "Demo_function"
     role = "arn:aws:iam::010526262752:role/service-role/demo-role-d2rf3g05"
     handler = "lambda_function.lambda_handler"
-    runtime = "python 3.0"
+    runtime = "python3.11"
 
     s3_bucket = "pavankalyan524"
     s3_key = ""
