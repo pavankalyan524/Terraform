@@ -40,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "name" {
     alarm_actions = [aws_sns_topic.name.arn]
     ok_actions = [aws_sns_topic.name.arn]
     insufficient_data_actions = [aws_sns_topic.name.arn]
-    statistic "Average"
+    statistic = "Average"
 
     dimenstions = {
         instanceId = "i-0fba9ab4c4050f548"
