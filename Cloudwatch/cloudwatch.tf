@@ -34,7 +34,7 @@ resource "aws_cloudwatch_metric_alarm" "name" {
     metric_name = "CPUUtilization"
     namespace =  "AWS/EC2"
     threshold = "5"
-    comparison_operator = "GreaterThanEqualToThreshold"
+    comparison_operator = "GreaterThanOrEqualToThreshold"
     period = "300"
     evaluation_periods = "1"
     alarm_actions = [aws_sns_topic.name.arn]
