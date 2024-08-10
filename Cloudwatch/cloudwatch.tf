@@ -21,7 +21,7 @@ resource "aws_sns_topic" "name" {
 
 resource "aws_sns_topic_subscription" "name" {
 
-    topic_arn = aws_sns_topic.topic_arn
+    topic_arn = aws_sns_topic.name.arn
     protocol = "email"
     endpoint = "gvpk1999@gmail.com"
 }
@@ -33,8 +33,8 @@ resource "aws_cloudwatch_metric_alarm" "name" {
 
     metric_name = "CPUUtilization"
     namespace =  "AWS/EC2"
-    treshhold = "5"
-    comparison_operator = "GreaterThanEqualToTreshhold"
+    threshold = "5"
+    comparison_operator = "GreaterThanEqualToThreshold"
     period = "300"
     evaluation_periods = "1"
     alarm_actions = [aws_sns_topic.name.arn]
@@ -42,7 +42,7 @@ resource "aws_cloudwatch_metric_alarm" "name" {
     insufficient_data_actions = [aws_sns_topic.name.arn]
     statistic = "Average"
 
-    dimenstions = {
+    dimensions = {
         instanceId = "i-0fba9ab4c4050f548"
     }
 
