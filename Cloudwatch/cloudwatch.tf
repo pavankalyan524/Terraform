@@ -48,3 +48,16 @@ resource "aws_cloudwatch_metric_alarm" "name" {
 
   
 }
+
+
+resource "aws_cloudwatch_log_group" "name" {
+
+    name = "Demo_group"
+    retention_in_days = 0
+}
+
+resource "aws_cloudwatch_log_stream" "name" {
+
+    name = "Demo_log_stream"
+    log_group_name = aws_cloudwatch_log_group.name.name
+}
