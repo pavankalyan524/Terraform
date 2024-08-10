@@ -35,7 +35,7 @@ resource "aws_cloudwatch_metric_alarm" "name" {
     namespace =  "AWS/EC2"
     threshold = "5"
     comparison_operator = "GreaterThanOrEqualToThreshold"
-    period = "300"
+    period = "60"
     evaluation_periods = "1"
     alarm_actions = [aws_sns_topic.name.arn]
     ok_actions = [aws_sns_topic.name.arn]
@@ -43,7 +43,7 @@ resource "aws_cloudwatch_metric_alarm" "name" {
     statistic = "Average"
 
     dimensions = {
-        instanceId = "i-0fba9ab4c4050f548"
+        InstanceId = "i-0fba9ab4c4050f548"
     }
 
   
