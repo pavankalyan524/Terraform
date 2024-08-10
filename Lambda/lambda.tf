@@ -21,7 +21,7 @@ resource "aws_lambda_function" "name" {
     runtime = "python3.11"
 
     s3_bucket = "pavankalyan524"
-    s3_key = ""
+    s3_key = "pavankalyan524/lambda-function.zip"
 
     environment {
 
