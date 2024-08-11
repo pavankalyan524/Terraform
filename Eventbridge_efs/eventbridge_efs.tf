@@ -73,7 +73,7 @@ resource "aws_lambda_function" "name" {
 
     function_name = "for_efs"
     runtime = "python3.11"
-    handler = lambda_function.lambda_handler
+    handler = "lambda_function.lambda_handler"
     role = "arn:aws:iam::010526262752:role/service-role/demo-role-d2rf3g05"
 
     s3_bucket = "pavan524"
