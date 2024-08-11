@@ -48,7 +48,7 @@ resource "aws_cloudwatch_event_rule" "name" {
 resource "aws_cloudwatch_event_target" "name" {
 
     rule = aws_cloudwatch_event_rule.name.name
-    target_id = "Invoke lambda"
+    target_id = "Invokelambda"
     arn = aws_lambda_function.name.arn
 }
 
@@ -58,7 +58,7 @@ resource "aws_lambda_permission" "name" {
     source_arn = aws_cloudwatch_event_rule.name.arn
     function_name = aws_lambda_function.name.function_name
     action = "lambda:InvokeFunction"
-    statement_id = "GivingPermissiontoEventbridgefrom lambda"
+    statement_id = "GivingPermissiontoEventbridgefromlambda"
   
 }
 
