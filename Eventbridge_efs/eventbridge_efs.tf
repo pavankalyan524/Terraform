@@ -82,7 +82,7 @@ resource "aws_lambda_function" "name" {
     file_system_config {
 
       arn = aws_efs_file_system.name.arn
-      local_mount_path = "/mnt/efs/"
+      local_mount_path = "/mnt/efs"
     }
 
     vpc_config {
@@ -97,7 +97,7 @@ resource "aws_cloudwatch_event_rule" "name" {
     name = "for_efs"
     event_bus_name = "default"
 
-    schedule_expression = "rate(6 hr 15 minutes)"
+    schedule_expression = "rate(375 minutes)"
 
 }
 
