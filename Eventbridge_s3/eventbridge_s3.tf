@@ -22,7 +22,7 @@ resource "aws_lambda_function" "name" {
     handler = "lambda_function.lambda_handler"
 
     s3_bucket = "pavankalyan524"
-    s3_key = "lambda_function.zip"
+    s3_key = "lambda-function.zip"
 
 }
 
