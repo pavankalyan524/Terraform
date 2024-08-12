@@ -43,7 +43,7 @@ resource "aws_secretsmanager_secret_version" "name" {
         "password" : "random_password.name.result"
     })
 
-    
+
   
 }
 
@@ -58,6 +58,16 @@ resource "aws_lambda_function" "name" {
     s3_bucket = "pavankalyan524"
     s3_key = "lambda-function.zip"
 
+  
+}
+
+
+resource "aws_lambda_permission" "name" {
+
+    principal = "secretsmanager.amazonaws.com"
+    action = "lambda:invokefunction"
+    function_name = aws_lambda_function.name.function_name
+    statement_id = "Thisistoprovidelambdapermission"
   
 }
 
