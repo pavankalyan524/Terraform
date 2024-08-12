@@ -15,6 +15,7 @@ resource "random_password" "name" {
 output "Generated_password" {
 
     value = random_password.name.result
+    sensitive = true
 }
 
 
