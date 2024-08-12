@@ -14,16 +14,37 @@ provider "aws" {
   
 }
 
+resource "random_password" "name" {
+
+    length = 16
+    numeric = true
+    special = true
+    
+}
+
 resource "aws_secretsmanager_secret" "name" {
 
     name = "demo_secret"
     description = "This is the demo secret"
     recovery_window_in_days = 7
 
-    generate_secret_string {
+    /*generate_secret_string {
     password_length = 16
     include_space   = false
-  }
+  }*/
+}
+
+resource "aws_secretsmanager_secret_version" "name" {
+
+    secret_id = aws_secretsmanager_secret.name.id
+    secret_string = jsonencode({
+
+        "username" : "admin"
+        "password" : "random_password.name.result"
+    })
+
+    
+  
 }
 
 
