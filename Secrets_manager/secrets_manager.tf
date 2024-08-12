@@ -33,6 +33,10 @@ resource "aws_lambda_function" "name" {
     runtime = "python3.11"
     handler = "lambda_function.lambda_handler"
     role = "arn:aws:iam::010526262752:role/service-role/demo-role-d2rf3g05"
+
+    s3_bucket = "pavankalyan524"
+    s3_key = "lambda-function.zip"
+
   
 }
 
