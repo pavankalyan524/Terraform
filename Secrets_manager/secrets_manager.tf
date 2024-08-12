@@ -40,7 +40,7 @@ resource "aws_secretsmanager_secret_version" "name" {
     secret_string = jsonencode({
 
         "username" : "admin"
-        "password" : "random_password.name.result"
+        "password" : random_password.name.result
     })
 
 
